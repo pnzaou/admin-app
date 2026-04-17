@@ -1,6 +1,6 @@
 package sn.isi.entities;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,4 +10,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Produit {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(unique = true, nullable = false, length = 200)
+    private String nom;
+
+    private double qtStock;
+
+    @ManyToOne
+    private AppUser appUser;
 }
