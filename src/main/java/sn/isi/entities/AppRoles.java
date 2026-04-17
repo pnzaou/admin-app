@@ -1,4 +1,4 @@
-package sn.isi.exception;
+package sn.isi.entities;
 
 public class AppRoles {
 }
